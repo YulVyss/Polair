@@ -430,6 +430,7 @@ a:visited.btn {
       width: auto;
       min-width: 100%;
     }
+
     &__menu-item {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
@@ -445,14 +446,20 @@ a:visited.btn {
         display: none;
       }
     }
-    &__bottom {
-      nav {
-        max-width: 100%;
-        width: 100%;
-        min-width: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-      }
+
+    &__nav {
+      max-width: 100%;
+      width: 100%;
+      min-width: 100%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+    &__nav::-webkit-scrollbar {
+      height: 5px;
+    }
+    &__nav::-webkit-scrollbar-thumb {
+      background-color: #f7f7f8d3;
+      border-radius: 2px;
     }
   }
 

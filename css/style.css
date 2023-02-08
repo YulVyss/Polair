@@ -515,12 +515,19 @@ a:visited.btn:hover {
   .header__menu-list::after {
     display: none;
   }
-  .header__bottom nav {
+  .header__nav {
     max-width: 100%;
     width: 100%;
     min-width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
+  }
+  .header__nav::-webkit-scrollbar {
+    height: 5px;
+  }
+  .header__nav::-webkit-scrollbar-thumb {
+    background-color: rgba(247, 247, 248, 0.8274509804);
+    border-radius: 2px;
   }
 }
 @media (max-width: 479.98px) {
