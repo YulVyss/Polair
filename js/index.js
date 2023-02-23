@@ -51,7 +51,7 @@ const sliderBrands = new Swiper('.brands__slider', {
   // Optional parameters
   init: true,
   loop: true,
-  centeredSlides: false,
+  centeredSlides: true,
   slidesPerView: 1,
   spaceBetween: 0,
 

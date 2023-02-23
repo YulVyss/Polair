@@ -37,14 +37,15 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   overflow: hidden;
+  padding: 0 20px;
   &_visible {
     overflow: visible;
   }
-  @media (max-width: 1440px) {
-    min-width: 100%;
+  @media (max-width: 1240px) {
+    width: 100%;
     padding: 0 20px;
   }
   @media (max-width: 767.98px) {
@@ -157,7 +158,7 @@ a:visited.btn {
   }
 
   &__top {
-    padding: 24px 0;
+    padding: 24px 0 23px;
     border-bottom: 1px solid #eaeaea;
   }
 
@@ -271,7 +272,7 @@ a:visited.btn {
     line-height: 158%;
     color: $blue;
     &_mail {
-      padding-left: 26px;
+      padding-left: 23px;
       margin-right: 32px;
       background: url("../img/mail.svg") left / contain no-repeat;
     }
@@ -469,7 +470,7 @@ a:visited.btn {
       border-bottom: none;
     }
     &__bottom {
-      padding: 10px 0 15px;
+      padding: 10px 0 11px;
     }
     nav {
       max-width: 320px;
@@ -570,10 +571,10 @@ a:visited.btn {
 //MAIN
 .section-main {
   position: relative;
-  padding: 60px 0 33px;
-  background: -o-linear-gradient(right, #60c0c3 34.8%, #ffffff 34.8%);
-  background: -webkit-gradient(linear, right top, left top, color-stop(34.8%, #60c0c3), color-stop(34.8%, #ffffff));
-  background: linear-gradient(to left, #60c0c3 34.8%, #ffffff 34.8%);
+  padding: 60px 0 28px;
+  background: -o-linear-gradient(right, #60c0c3 29.5%, #f7f7f8 29.5%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(29.5%, #60c0c3), color-stop(29.5%, #f7f7f8));
+  background: linear-gradient(to left, #60c0c3 29.5%, #f7f7f8 29.5%);
 
   // .section-main__slider
 
@@ -590,15 +591,14 @@ a:visited.btn {
   }
   .swiper-pagination {
     position: relative !important;
-    margin-top: 100px;
-    bottom: 0;
+    bottom: 5px;
   }
 
   @media (max-width: 767.98px) {
     padding: 24px 0;
-    background: -o-linear-gradient(top, #60c0c3 25%, #ffffff 25%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #60c0c3), color-stop(25%, #ffffff));
-    background: linear-gradient(to bottom, #60c0c3 25%, #ffffff 25%);
+    background: -o-linear-gradient(top, #60c0c3 31%, #ffffff 31%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(31%, #60c0c3), color-stop(31%, #ffffff));
+    background: linear-gradient(to bottom, #60c0c3 31%, #ffffff 31%);
 
     .swiper-pagination {
       margin-top: 0;
@@ -607,7 +607,10 @@ a:visited.btn {
     }
   }
   @media (max-width: 479.98px) {
-    padding: 7px 0;
+    padding: 0;
+    .swiper-pagination {
+      left: 80% !important;
+    }
   }
 }
 
@@ -754,14 +757,15 @@ a:visited.btn {
   }
   @media (max-width: 479.98px) {
     &__img {
+      max-height: 262px;
       img {
-        left: 0;
-        width: 113%;
-        max-width: 120%;
+        left: -22px;
+        width: 122%;
+        max-width: 122%;
       }
     }
     &__subtitle {
-      margin-bottom: 27px;
+      margin-bottom: 31px;
     }
   }
 }
@@ -769,7 +773,7 @@ a:visited.btn {
 //==================================================================
 //PRODUCTS
 .products {
-  padding: 80px 0 60px;
+  padding: 80px 0 61px;
   // .products__flex
 
   &__flex {
@@ -804,13 +808,15 @@ a:visited.btn {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+  &__list-item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 22%;
+    -ms-flex: 0 0 22%;
+    flex: 0 0 22%;
     ul {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 22%;
-      -ms-flex: 0 0 22%;
-      flex: 0 0 22%;
-      border-left: 1px solid #e1e1e1;
       padding: 0 0 0 16px;
+      border-left: 1px solid #e1e1e1;
     }
     li {
       margin-bottom: 18px;
@@ -860,7 +866,7 @@ a:visited.btn {
     }
   }
   @media (max-width: 479.98px) {
-    padding: 57px 0 20px;
+    padding: 60px 0 33px;
     &__list {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -878,6 +884,15 @@ a:visited.btn {
         margin-bottom: 14px;
       }
     }
+    &__list-item {
+      &:first-of-type {
+        margin-bottom: 15px;
+      }
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        margin-top: 15px;
+      }
+    }
   }
 }
 
@@ -888,6 +903,9 @@ a:visited.btn {
   background-color: $blue;
   padding: 80px 0 80px;
   color: #ffffff;
+  .container {
+    overflow: visible;
+  }
 
   // .about__title
 
@@ -903,39 +921,64 @@ a:visited.btn {
   // .about__wrapper
 
   &__wrapper {
-    margin-top: 93px;
+    margin: 93px 0 0 -45px;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    overflow: visible;
   }
 
   // .about__item
 
   &__item {
-    padding: 28px 0 0 48px;
+    position: relative;
+    padding: 24px 0 0 0;
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
+    overflow-x: visible;
+    z-index: 10;
     &_1 {
+      // &::before {
+      //   content: url("../img/icon2-1.svg");
+      //   position: absolute;
+      //   left: -60px;
+      //   top: 0;
+      //   width: 60px;
+      //   height: 60px;
+      // }
+      padding-left: 45px;
       background-image: url("../img/icon2-1.svg");
+      background-position: 0 0;
     }
     &_2 {
       background-image: url("../img/icon2-2.svg");
+      background-size: 29%;
+      background-position: 24px 0;
+      padding-left: 63px;
+      z-index: 11;
     }
     &_3 {
       background-image: url("../img/icon2-3.svg");
+      padding-left: 78px;
+      background-size: 27%;
+      background-position: 37px 0;
     }
     &_4 {
-      background-image: url("../img/icon2-4.svg");
+      background-image: url(../img/icon2-4.svg);
+      padding-left: 112px;
+      background-size: 29%;
+      background-position: 65px 9px;
     }
   }
 
   // .about__subtitle
 
   &__subtitle {
-    margin-bottom: 4px;
+    margin-bottom: 13px;
     font-style: normal;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 110%;
   }
 
@@ -975,7 +1018,7 @@ a:visited.btn {
     }
     &__wrapper {
       display: block;
-      margin-top: 18px;
+      margin-top: 22px;
     }
     &__subtitle {
       font-size: 18px;
@@ -1001,7 +1044,27 @@ a:visited.btn {
     }
   }
   @media (max-width: 479.98px) {
-    padding: 46px 0 45px;
+    padding: 46px 0 42px;
+    &__item {
+      text-align: center;
+      padding-left: 45px;
+      &_1 {
+        background-position: 67% 15px;
+        background-size: 25%;
+      }
+      &_2 {
+        background-position: 47% 28px;
+        background-size: 22%;
+      }
+      &_3 {
+        background-position: 66% 24px;
+        background-size: 20%;
+      }
+      &_4 {
+        background-position: 47% 32px;
+        background-size: 22%;
+      }
+    }
   }
 }
 //=========================================================
@@ -1108,7 +1171,12 @@ a:visited.btn {
     }
     &__description {
       width: 100%;
-      padding: 45px 0 55px;
+      padding: 45px 0 54px;
+    }
+    &__subtitle {
+      letter-spacing: 0.01rem;
+    }
+    &__text {
     }
   }
 }
@@ -1241,6 +1309,9 @@ a:visited.btn {
 
   &__block-link {
   }
+  a.help__block-link_m {
+    display: none;
+  }
 
   @media (max-width: 991.98px) {
     &__wrapper {
@@ -1270,17 +1341,37 @@ a:visited.btn {
       background: -webkit-gradient(linear, left bottom, left top, color-stop(71%, #f2f6fb), color-stop(71%, #ffffff));
       background: linear-gradient(to top, #f2f6fb 71%, #ffffff 71%);
       &:first-of-type {
-        margin-bottom: 30px;
+        margin-bottom: 28px;
       }
     }
     &__block-image {
       margin-bottom: 29px;
     }
     &__description {
-      padding: 0 0 30px;
+      padding: 0 0 35px;
     }
   }
   @media (max-width: 479.98px) {
+    &__subtitle {
+      letter-spacing: 0.03rem;
+      margin-bottom: 9px;
+    }
+    &__title {
+      margin-bottom: 15px;
+    }
+    &__block-image {
+      width: 111%;
+      margin: 13px 0 32px -13px;
+    }
+    a.help__block-link {
+      display: none;
+    }
+    a.help__block-link_m {
+      display: block;
+    }
+    &__block-text {
+      margin-bottom: 41px;
+    }
   }
 }
 
@@ -1428,7 +1519,7 @@ a:visited.btn {
     }
   }
   @media (max-width: 767.98px) {
-    padding: 48px 0 31px;
+    padding: 48px 0 33px;
     &__body {
       display: block;
     }
@@ -1460,7 +1551,7 @@ a:visited.btn {
 //===================================================================
 // CATALOG
 .catalog {
-  padding: 160px 0 50px;
+  padding: 160px 0 48px;
   background: url("../img/berries.png") center / cover no-repeat;
   // .catalog__body
 
@@ -1573,7 +1664,7 @@ a:visited.btn {
     }
   }
   @media (max-width: 479.98px) {
-    padding: 44px 0 0;
+    padding: 55px 0 0;
 
     &__grid {
       display: none;
@@ -1598,7 +1689,7 @@ a:visited.btn {
     &__item {
     }
     &__text {
-      margin-top: 6px;
+      margin-top: 14px;
     }
     &__slider .swiper-horizontal > .swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -1613,7 +1704,7 @@ a:visited.btn {
 //FOOTER
 
 .footer {
-  padding: 72px 0;
+  padding: 68px 0;
   background-color: $blue;
   color: #eaeaea;
   a,
@@ -1659,9 +1750,10 @@ a:visited.btn {
 
   // .footer__subtitle
 
-  &__subtitle {
+  &__subtitle,
+  li.footer__subtitle {
     display: block;
-    margin-bottom: 19px;
+    margin-bottom: 21px;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -1800,11 +1892,13 @@ a:visited.btn {
   // .footer__text
 
   &__text {
-    margin-bottom: 22px;
+    margin-bottom: 24px;
     font-style: normal;
     font-weight: 400;
     font-size: 11px;
     line-height: 158%;
+    word-spacing: 3px;
+    letter-spacing: 0.3px;
     &_m0 {
       margin-bottom: 0;
     }
@@ -1832,7 +1926,7 @@ a:visited.btn {
     -ms-flex-align: center;
     align-items: center;
     li {
-      margin-right: 24px;
+      margin-right: 30px;
     }
   }
 
@@ -1881,6 +1975,9 @@ a:visited.btn {
     align-items: center;
     li {
       margin-right: 6px;
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 
@@ -1973,6 +2070,7 @@ a:visited.btn {
       -ms-flex-align: center;
       align-items: center;
     }
+
     &__phone {
       margin-right: 0;
       margin-bottom: 6px;
@@ -1981,7 +2079,7 @@ a:visited.btn {
       }
     }
     &__logo {
-      margin-bottom: 20px;
+      margin-bottom: 17px;
     }
     &__soc-links {
       margin-bottom: 20px;
@@ -1989,13 +2087,16 @@ a:visited.btn {
 
     &__text {
       margin-bottom: 14px;
-      font-size: 10px;
+      font-size: 11px;
       &_m0 {
         margin-bottom: 0;
+        margin-top: 20px;
+        font-size: 9px;
+        line-height: 16px;
       }
     }
     &__text p {
-      margin-bottom: 6px;
+      margin-bottom: 12px;
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -2009,6 +2110,7 @@ a:visited.btn {
     }
     &__bottom-links {
       display: block;
+      margin-bottom: 15px;
     }
   }
 
@@ -2059,6 +2161,7 @@ a:visited.btn {
     }
   }
   @media (max-width: 479.98px) {
+    padding: 33px 0 30px;
     &__sel {
       display: none;
     }
@@ -2066,7 +2169,16 @@ a:visited.btn {
       margin-bottom: 14px;
     }
     &__text p {
-      margin-bottom: 19px;
+      margin-bottom: 7px;
+    }
+    &__flex-item {
+      width: 100%;
+    }
+    &__text_m0 {
+      margin-top: 40px;
+    }
+    &__bottom-links li {
+      margin-bottom: 16px;
     }
   }
 }
